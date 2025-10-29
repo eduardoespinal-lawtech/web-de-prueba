@@ -4,9 +4,7 @@
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>(EA/R) Espinal, Almonte & Ritch — Estrategia Legal Empresarial</title>
-  <meta name="description" content="Firma LegalTech: corporativo, inmobiliario, tecnología y cumplimiento transfronterizo. Diseño premium en español."/>
-
-  <!-- Fuentes & Tailwind -->
+  <meta name="description" content="Firma LegalTech en corporativo, datos, inmobiliario y litigios. Estructuración, cumplimiento y automatización para operar con menos riesgo."/>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@700;800&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -16,11 +14,8 @@
         extend: {
           fontFamily: { sans:['Inter','system-ui','-apple-system','Segoe UI','sans-serif'], display:['Manrope','Inter','system-ui'] },
           colors: {
-            brand: {
-              50:'#EEF2FF', 100:'#E0E7FF', 200:'#C7D2FE', 300:'#A5B4FC', 400:'#818CF8',
-              500:'#6366F1', 600:'#4F46E5', 700:'#4338CA', 800:'#3730A3', 900:'#312E81'
-            },
-            accent: { 400:'#FFA445', 500:'#FF8B1F', 600:'#F77500' },
+            brand:{50:'#EEF2FF',100:'#E0E7FF',200:'#C7D2FE',300:'#A5B4FC',400:'#818CF8',500:'#6366F1',600:'#4F46E5',700:'#4338CA',800:'#3730A3',900:'#312E81'},
+            accent:{400:'#FFB669',500:'#FF8C29',600:'#F97316'},
             ink:'#0B1020', sky:'#F6F9FC'
           },
           boxShadow:{ soft:'0 10px 30px -12px rgba(16,24,40,.18)', deep:'0 18px 50px -24px rgba(16,24,40,.28)' },
@@ -32,33 +27,56 @@
   <style>
     html{scroll-behavior:smooth}
     :root{ --h1:clamp(2.4rem,5vw,3.4rem); --h2:clamp(1.6rem,2.6vw,2.2rem); --lead:clamp(1.05rem,1.2vw,1.125rem) }
-    body{font-family:var(--font-body, 'Inter'), system-ui; color:#0F172A}
+    body{font-family:var(--font-body,'Inter'),system-ui; color:#0F172A; background:#fff}
     .btn{display:inline-flex;align-items:center;gap:.5rem;border-radius:9999px;padding:.85rem 1.25rem;font-weight:700}
     .btn-primary{background:linear-gradient(90deg,#6366F1,#4338CA);color:#fff;box-shadow:0 12px 30px -16px rgba(67,56,202,.6)}
     .btn-primary:hover{filter:brightness(1.05)}
     .btn-outline{border:1px solid #CBD5E1;color:#0F172A;background:#fff}
-    .ribbon{position:relative; height:56px; overflow:hidden}
-    .ribbon::before{content:""; position:absolute; inset:-40% -10% 0 -10%; background:linear-gradient(100deg,#FFBC73,#FF9A3E,#FF7A00); filter:saturate(1.1) blur(0.3px); transform:skewY(-6deg)}
     .feature{background:#fff;border:1px solid #E5E7EB;border-radius:14px;padding:18px}
     .card{background:#fff;border:1px solid #E5E7EB;border-radius:16px;box-shadow:var(--shadow,0 10px 30px -16px rgba(0,0,0,.18))}
     .muted{color:#475569}
     .section{padding:3.25rem 0}
+    .ribbon{position:relative; height:64px; overflow:hidden}
+    .ribbon::before{content:""; position:absolute; inset:-45% -8% 0 -8%; background:linear-gradient(100deg,#FFD5A8,#FFB669,#FF8C29,#F97316); transform:skewY(-8deg)}
+    @media print {.no-print{display:none !important} body{color:#111827}}
   </style>
 </head>
-<body class="antialiased bg-white">
-  <!-- Barra superior -->
-  <header class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-slate-200">
+<body class="antialiased">
+
+  <!-- HEADER -->
+  <header class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-slate-200 no-print">
     <div class="container h-14 flex items-center gap-6">
       <a href="#inicio" class="flex items-center gap-2 font-display font-extrabold tracking-tight text-brand-700">
-        <svg class="w-6 h-6 text-brand-600" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" d="M12 2L2 7l10 5 10-5-10-5zM2 12l10 5 10-5M2 17l10 5 10-5"/></svg>
+        <svg class="w-6 h-6 text-brand-600" viewBox="0 0 24 24" aria-hidden="true">
+          <path fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" d="M12 2L2 7l10 5 10-5-10-5zM2 12l10 5 10-5M2 17l10 5 10-5"/>
+        </svg>
         <span>(EA/R) Espinal, Almonte & Ritch</span>
       </a>
+
       <nav class="ml-auto hidden md:flex items-center gap-7 text-sm font-medium" aria-label="Principal">
         <a href="#por-que" class="hover:text-brand-600">Por qué nosotros</a>
         <a href="#como" class="hover:text-brand-600">¿Cómo funciona?</a>
         <a href="#servicios" class="hover:text-brand-600">Servicios</a>
+        <a href="#clientes" class="hover:text-brand-600">Clientes</a>
+        <a href="#equipo" class="hover:text-brand-600">Equipo</a>
         <a href="#recursos" class="hover:text-brand-600">Recursos</a>
         <a href="#contacto" class="hover:text-brand-600">Contacto</a>
+      </nav>
+
+      <button id="menu-toggle" type="button" class="md:hidden p-2" aria-label="Abrir menú" aria-controls="menu-mobile" aria-expanded="false">
+        <svg id="icon-open" class="w-6 h-6" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" d="M3 6h18M3 12h18M3 18h18"/></svg>
+        <svg id="icon-close" class="w-6 h-6 hidden" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" d="M6 6l12 12M18 6l-12 12"/></svg>
+      </button>
+    </div>
+    <div id="menu-mobile" class="hidden md:hidden border-t border-slate-200">
+      <nav class="container py-3 grid gap-2 text-sm">
+        <a href="#por-que">Por qué nosotros</a>
+        <a href="#como">¿Cómo funciona?</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#clientes">Clientes</a>
+        <a href="#equipo">Equipo</a>
+        <a href="#recursos">Recursos</a>
+        <a href="#contacto">Contacto</a>
       </nav>
     </div>
   </header>
@@ -67,22 +85,27 @@
   <section id="inicio" class="pt-10 md:pt-14">
     <div class="container grid md:grid-cols-12 gap-8">
       <div class="md:col-span-7">
-        <h1 class="font-display font-extrabold leading-tight" style="font-size:var(--h1)">Constituye y protege tu empresa con estrategia legal y tecnología</h1>
-        <p class="muted mt-3 max-w-2xl" style="font-size:var(--lead)">Estructuración corporativa, cumplimiento de datos y contratos trazables. Todo diseñado para operar más rápido y con menos riesgo.</p>
+        <h1 class="font-display font-extrabold leading-tight" style="font-size:var(--h1)">
+          Constituye y protege tu empresa con estrategia legal y tecnología
+        </h1>
+        <p class="muted mt-3 max-w-2xl" style="font-size:var(--lead)">
+          Estructuración corporativa, cumplimiento de datos y contratos trazables. Diseñado para operar más rápido y con menos riesgo.
+        </p>
         <div class="mt-6 flex flex-wrap gap-3">
           <a href="#contacto" class="btn btn-primary">Agenda una consulta</a>
           <a href="#por-que" class="btn btn-outline">Ver cómo te ayudamos</a>
         </div>
       </div>
+
       <div class="md:col-span-5">
         <div class="card p-5">
           <h3 class="font-semibold text-slate-900">Diagnóstico inicial</h3>
           <p class="muted text-sm mt-1">Cuéntanos tu caso y recibe un mapa de riesgos + plan de implementación.</p>
-          <form class="mt-4 grid gap-3">
-            <input class="w-full rounded-xl border border-slate-300 px-3 py-2" placeholder="Nombre y empresa" aria-label="Nombre"/>
+          <form class="mt-4 grid gap-3" onsubmit="return false">
+            <input class="w-full rounded-xl border border-slate-300 px-3 py-2" placeholder="Nombre y empresa" aria-label="Nombre y empresa"/>
             <input class="w-full rounded-xl border border-slate-300 px-3 py-2" placeholder="Correo" aria-label="Correo"/>
             <textarea class="w-full rounded-xl border border-slate-300 px-3 py-2" rows="3" placeholder="Necesidades (corporativo, datos, inmobiliario, litigios)"></textarea>
-            <button type="button" class="btn btn-primary justify-center">Solicitar diagnóstico</button>
+            <a href="mailto:info@ear.com.do?subject=Solicitud%20de%20Diagn%C3%B3stico" class="btn btn-primary justify-center">Solicitar diagnóstico</a>
           </form>
         </div>
       </div>
@@ -93,8 +116,10 @@
   <!-- POR QUÉ -->
   <section id="por-que" class="section bg-sky">
     <div class="container">
-      <h2 class="font-display font-extrabold text-slate-900 text-center" style="font-size:var(--h2)">Rápido, confiable y automatizado</h2>
-      <p class="muted text-center max-w-3xl mx-auto mt-2">Usamos marcos y checklists auditables para entregar incorporaciones, contratos y cumplimiento en tiempos predecibles, con trazabilidad de cada decisión.</p>
+      <h2 class="font-display font-extrabold text-center" style="font-size:var(--h2)">Rápido, confiable y automatizado</h2>
+      <p class="muted text-center max-w-3xl mx-auto mt-2">
+        Marcos y checklists auditables para incorporaciones, contratos y cumplimiento con tiempos predecibles y trazabilidad de cada decisión.
+      </p>
 
       <div class="grid md:grid-cols-3 gap-4 mt-8">
         <div class="feature">
@@ -103,11 +128,11 @@
         </div>
         <div class="feature">
           <h3 class="font-semibold">Blindaje de plataformas</h3>
-          <p class="muted text-sm mt-1">Políticas y contratos que reducen riesgo en web, apps, SaaS y comercio electrónico.</p>
+          <p class="muted text-sm mt-1">Políticas y contratos que reducen riesgo en web, apps, SaaS y e-commerce.</p>
         </div>
         <div class="feature">
           <h3 class="font-semibold">Cumplimiento de datos</h3>
-          <p class="muted text-sm mt-1">GDPR y Ley 172‑13 con DPIA, registros y contratos de encargo (DPA) alineados.</p>
+          <p class="muted text-sm mt-1">GDPR y Ley 172-13 con DPIA, registros y contratos de encargo (DPA) alineados.</p>
         </div>
       </div>
 
@@ -132,6 +157,7 @@
   <section id="como" class="section">
     <div class="container">
       <h2 class="font-display font-extrabold text-center" style="font-size:var(--h2)">¿Cómo funciona?</h2>
+
       <div class="grid md:grid-cols-5 gap-4 mt-6">
         <div class="feature"><span class="text-accent-600 font-bold">1</span><h3 class="font-semibold mt-1">Diagnóstico</h3><p class="muted text-sm">Revisión de objetivos, riesgos y jurisdicciones.</p></div>
         <div class="feature"><span class="text-accent-600 font-bold">2</span><h3 class="font-semibold mt-1">Diseño</h3><p class="muted text-sm">Arquitectura legal (sociedades, contratos, datos).</p></div>
@@ -162,17 +188,59 @@
     </div>
   </section>
 
-  <!-- SERVICIOS (resumen) -->
+  <!-- SERVICIOS -->
   <section id="servicios" class="section bg-sky">
     <div class="container">
       <h2 class="font-display font-extrabold text-center" style="font-size:var(--h2)">Servicios</h2>
       <div class="grid md:grid-cols-3 gap-4 mt-6">
         <div class="feature"><h3 class="font-semibold">Empresarial y gobierno corporativo</h3><p class="muted text-sm mt-1">Constitución (SRL, SA, EIRL, LLC, Inc.), pactos de socios, holding y M&A.</p></div>
-        <div class="feature"><h3 class="font-semibold">Tecnología, datos y PI</h3><p class="muted text-sm mt-1">GDPR/Ley 172‑13, marcas, patentes y contratos de software/SaaS.</p></div>
+        <div class="feature"><h3 class="font-semibold">Tecnología, datos y PI</h3><p class="muted text-sm mt-1">GDPR/Ley 172-13, marcas, patentes y contratos de software/SaaS.</p></div>
         <div class="feature"><h3 class="font-semibold">Inmobiliario y fideicomisos</h3><p class="muted text-sm mt-1">Estudios de títulos, compraventas, construcción y trusts de inversión.</p></div>
         <div class="feature"><h3 class="font-semibold">Comercio internacional y litigios</h3><p class="muted text-sm mt-1">Cobros, daños, ADR, ejecución de sentencias y aduanas.</p></div>
         <div class="feature"><h3 class="font-semibold">Desarrollo LegalTech</h3><p class="muted text-sm mt-1">CRM (Dynamics 365), software contable y Privacy/Compliance by Design.</p></div>
         <div class="feature"><h3 class="font-semibold">Proyectos a medida</h3><p class="muted text-sm mt-1">Planes modulares según etapas y sectores regulados.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CLIENTES -->
+  <section id="clientes" class="section">
+    <div class="container">
+      <h2 class="font-display font-extrabold text-center" style="font-size:var(--h2)">Clientes que confían</h2>
+      <p class="muted text-center max-w-3xl mx-auto mt-2">Opiniones reales sobre nuestra estrategia legal impulsada por tecnología.</p>
+
+      <div class="grid md:grid-cols-2 gap-4 mt-6">
+        <article class="card p-4">
+          <p class="italic text-slate-700 text-sm">“La implementación de sus flujos LegalTech nos ahorró un 30% en costos de cumplimiento y redujo el tiempo de negociación a la mitad.”</p>
+          <div class="pt-3 mt-3 border-t border-slate-200 text-xs font-semibold text-slate-900">Alejandro P. — <span class="font-normal text-slate-600">CEO, Tech Innovators Group</span></div>
+        </article>
+        <article class="card p-4">
+          <p class="italic text-slate-700 text-sm">“Para un proyecto turístico transfronterizo, entregaron la estructura fiduciaria más clara y eficiente en tiempo récord.”</p>
+          <div class="pt-3 mt-3 border-t border-slate-200 text-xs font-semibold text-slate-900">Sofía M. — <span class="font-normal text-slate-600">Directora de Inversiones, Global Estates</span></div>
+        </article>
+        <article class="card p-4">
+          <p class="italic text-slate-700 text-sm">“Protegieron nuestro software de manera sólida, permitiendo expandirnos con total confianza en nuevos mercados.”</p>
+          <div class="pt-3 mt-3 border-t border-slate-200 text-xs font-semibold text-slate-900">Carlos J. — <span class="font-normal text-slate-600">Fundador, Data Solutions Inc.</span></div>
+        </article>
+        <article class="card p-4">
+          <p class="italic text-slate-700 text-sm">“Atención de socios; estrategia de litigio proactiva y orientada a recuperación de valor. Excelente.”</p>
+          <div class="pt-3 mt-3 border-t border-slate-200 text-xs font-semibold text-slate-900">Laura H. — <span class="font-normal text-slate-600">Gerente Legal, Holding Industrial</span></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- EQUIPO -->
+  <section id="equipo" class="section bg-sky">
+    <div class="container">
+      <h2 class="font-display font-extrabold text-center" style="font-size:var(--h2)">Liderazgo y experiencia</h2>
+      <p class="muted text-center max-w-3xl mx-auto mt-2">Dirección de socios y especialistas por materia. Coordinación ágil y trazable.</p>
+
+      <div class="grid md:grid-cols-4 gap-4 mt-6">
+        <article class="feature"><h3 class="font-semibold">Eduardo L. Espinal De Aza</h3><p class="text-brand-700 text-sm mt-1">Socio Director</p><p class="muted text-sm mt-1">Estructuración, M&A, inmobiliario y LegalTech. Diseña marcos de cumplimiento.</p></article>
+        <article class="feature"><h3 class="font-semibold">Juan R. Almonte</h3><p class="text-brand-700 text-sm mt-1">Socio Fundador</p><p class="muted text-sm mt-1">Litigio corporativo y administrativo; regulación y relaciones gubernamentales.</p></article>
+        <article class="feature"><h3 class="font-semibold">Thomas Ritch</h3><p class="text-brand-700 text-sm mt-1">Socio</p><p class="muted text-sm mt-1">Propiedad intelectual y transacciones tecnológicas; ADR y contratación transfronteriza.</p></article>
+        <article class="feature"><h3 class="font-semibold">Ana María Rodriguez</h3><p class="text-brand-700 text-sm mt-1">Asociada Senior</p><p class="muted text-sm mt-1">Privacidad, ciberseguridad y OSS; patentes y marcas. Implementa DPIA/DPAs.</p></article>
       </div>
     </div>
   </section>
@@ -182,9 +250,9 @@
     <div class="container">
       <h2 class="font-display font-extrabold text-center" style="font-size:var(--h2)">Más recursos</h2>
       <div class="grid md:grid-cols-3 gap-4 mt-6">
-        <a class="feature hover:shadow-soft" href="#">Checklist de inicio: Arquitectura</a>
-        <a class="feature hover:shadow-soft" href="#">Cómo constituir una empresa</a>
-        <a class="feature hover:shadow-soft" href="#">Guía de cumplimiento de datos</a>
+        <div class="feature hover:shadow-soft cursor-default"><h3 class="font-semibold">Checklist de inicio</h3><p class="muted text-sm mt-1">Arquitectura legal y documentación mínima.</p></div>
+        <div class="feature hover:shadow-soft cursor-default"><h3 class="font-semibold">Cómo constituir una empresa</h3><p class="muted text-sm mt-1">Pasos, tiempos y documentos.</p></div>
+        <div class="feature hover:shadow-soft cursor-default"><h3 class="font-semibold">Guía de cumplimiento de datos</h3><p class="muted text-sm mt-1">GDPR y Ley 172-13 con ejemplos prácticos.</p></div>
       </div>
     </div>
   </section>
@@ -195,18 +263,22 @@
       <div class="card p-8 text-center">
         <h2 class="font-display font-extrabold" style="font-size:var(--h2)">¿Todo listo para empezar?</h2>
         <p class="muted mt-2">Cierra una reunión y recibe tu plan de trabajo y entrega de documentos.</p>
-        <div class="mt-5"><a href="mailto:info@ear.com.do?subject=Consulta%20EA-R" class="btn btn-primary">Contáctanos</a></div>
+        <div class="mt-5">
+          <a href="mailto:info@ear.com.do?subject=Consulta%20EA-R" class="btn btn-primary">Contáctanos</a>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- FOOTER amplio -->
+  <!-- FOOTER -->
   <footer class="bg-white border-t border-slate-200">
     <div class="container py-10">
       <div class="grid md:grid-cols-4 gap-8 text-sm">
         <div>
           <div class="flex items-center gap-2 font-display font-extrabold text-brand-700">
-            <svg class="w-6 h-6 text-brand-600" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" d="M12 2L2 7l10 5 10-5-10-5zM2 12l10 5 10-5M2 17l10 5 10-5"/></svg>
+            <svg class="w-6 h-6 text-brand-600" viewBox="0 0 24 24" aria-hidden="true">
+              <path fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" d="M12 2L2 7l10 5 10-5-10-5zM2 12l10 5 10-5M2 17l10 5 10-5"/>
+            </svg>
             <span>(EA/R) Espinal, Almonte & Ritch</span>
           </div>
           <p class="muted mt-3">Estrategia legal empresarial con enfoque en tecnología y cumplimiento.</p>
@@ -215,7 +287,7 @@
           <h3 class="font-semibold mb-2">Servicios</h3>
           <ul class="space-y-2 muted">
             <li>Corporativo & M&A</li>
-            <li>Datos & PI</li>
+            <li>Datos & Propiedad Intelectual</li>
             <li>Inmobiliario & Trusts</li>
             <li>Litigios & ADR</li>
             <li>LegalTech & Automatización</li>
@@ -232,7 +304,7 @@
         <div>
           <h3 class="font-semibold mb-2">Contacto</h3>
           <ul class="space-y-2 muted">
-            <li>info@ear.com.do</li>
+            <li><a href="mailto:info@ear.com.do">info@ear.com.do</a></li>
             <li>Santo Domingo, República Dominicana</li>
           </ul>
         </div>
@@ -245,9 +317,30 @@
   </footer>
 
   <script>
-    document.addEventListener('DOMContentLoaded',()=>{
-      document.getElementById('year').textContent = new Date().getFullYear();
-    })
+    // Menú móvil y año dinámico (sin enlaces ni dependencias extra)
+    document.addEventListener('DOMContentLoaded', () => {
+      const y = new Date().getFullYear();
+      const yearEl = document.getElementById('year');
+      if (yearEl) yearEl.textContent = y;
+
+      const toggle = document.getElementById('menu-toggle');
+      const mobile = document.getElementById('menu-mobile');
+      const openI = document.getElementById('icon-open');
+      const closeI = document.getElementById('icon-close');
+      if (toggle && mobile) {
+        toggle.addEventListener('click', () => {
+          const open = mobile.classList.contains('hidden');
+          mobile.classList.toggle('hidden', !open);
+          openI.classList.toggle('hidden', open);
+          closeI.classList.toggle('hidden', !open);
+          toggle.setAttribute('aria-expanded', String(open));
+          document.body.style.overflow = open ? 'hidden' : '';
+        });
+        mobile.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+          mobile.classList.add('hidden'); openI.classList.remove('hidden'); closeI.classList.add('hidden'); document.body.style.overflow='';
+        }));
+      }
+    });
   </script>
 </body>
 </html>
